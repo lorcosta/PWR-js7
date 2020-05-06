@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>JS 7_2</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa">
+    <link id="pagestyle" rel=stylesheet href=fogliodistile.css>
+    <script>
+      "use strict";
+      var state="giorno";
+      function giorno(x){
+        var m=document.getElementById(x)
+        if(state=="notte"){
+          state="giorno";
+          m.innerHTML="Adesso &egrave giorno";
+          m.style.color="black";
+          m.style.background="white";
+        }
+      }
+      function swapStyleSheet(sheet,words){
+        document.getElementById('pagestyle').setAttribute('href', sheet);
+        var m=document.getElementById(words);
+        if(sheet=='light.css'){
+          m.innerHTML="Adesso &egrave giorno";
+        }else if(sheet=="dark.css"){
+          m.innerHTML="Adesso &egrave notte";
+        }
+      }
+    </script>
+  </head>
+  <body>
+      <h1 id="message">Esercizio</h1>
+      <p>Tanto va la gatta al lardo che ci lascia lo zampino</p>
+      <span onclick="swapStyleSheet('light.css','message')"><p>GIORNO</p></span>
+      <span onclick="swapStyleSheet('dark.css','message')"><p>NOTTE</p></span>
+      <script>
+        "use strict";
+      </script>
+  </body>
+</html>
