@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
   <head>
-    <title>Prove con JS</title>
+    <title>JS 7_2</title>
     <meta charset="utf-8">
     <meta name="author" content="Lorenzo Costa" >
     <link rel=stylesheet href=fogliodistile.css>
@@ -21,7 +21,7 @@
       <p>Calcolo area e circonferenza di un cerchio dato il diametro</p>
       <script>
         "use strict";
-        var numeroString, diametr;
+        var numeroString, diametro;
         var invalid=true;
         do{
           numeroString=window.prompt("Inserire un numero corrispondente al diametro","");
@@ -33,7 +33,9 @@
           }else if(isNaN(diametro)){
             window.alert("Inserire un numero valido!")
           }else{
-            document.writeln("<p> Un cerchio di diametro "+diametro+" ha area "+area(diametro)+" e circonferenza "+circonferenza(diametro)"<\/p>")
+            var area=area(diametro)
+            var circonferenza=circonferenza(diametro)
+            document.writeln("<p> Un cerchio di diametro "+diametro+" ha area "+area.toFixed(3)+" e circonferenza "+circonferenza.toFixed(3)+"<\/p>")
             //inserire quello che deve fare lo script
             invalid=false;
           }
