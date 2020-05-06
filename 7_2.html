@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>Prove con JS</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa" >
+    <link rel=stylesheet href=fogliodistile.css>
+    <script>
+      "use strict";
+      function area(diametro){
+        return Math.PI*(Math.pow(diametro/2,2));
+      }
+      function circonferenza(diametro){
+        return diametro*Math.PI;
+      }
+    </script>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore della pagina: Lorenzo Costa</p>
+      <p>Calcolo area e circonferenza di un cerchio dato il diametro</p>
+      <script>
+        "use strict";
+        var numeroString, diametr;
+        var invalid=true;
+        do{
+          numeroString=window.prompt("Inserire un numero corrispondente al diametro","");
+          diametro=Number(numeroString);
+          //Se input assume il valore null o stringa vuota allora non è
+          //stato settato perciò risulta false
+          if(!diametro){
+            window.alert("Non è stato inserito alcun numero!")
+          }else if(isNaN(diametro)){
+            window.alert("Inserire un numero valido!")
+          }else{
+            document.writeln("<p> Un cerchio di diametro "+diametro+" ha area "+area(diametro)+" e circonferenza "+circonferenza(diametro)"<\/p>")
+            //inserire quello che deve fare lo script
+            invalid=false;
+          }
+        }while(invalid)
+      </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>Prove con JS</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa" >
+    <link rel=stylesheet href=fogliodistile.css>
+    <script>
+      "use strict";
+      function showMyTime(){
+        var orario=new Date();
+        return orario;
+      }
+    </script>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore della pagina: Lorenzo Costa</p>
+      <script>
+        "use strict";
+        var utc=new Date()
+        document.writeln("<p>Data e ora attuali sono: "+showMyTime()+"<\/p>")
+        document.writeln("<p>Data e ora UTC sono: "+utc.toUTCString()+"<\/p>")
+      </script>
+  </body>
+</html>
