@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="it">
+  <head>
+    <title>JS 7_5</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa">
+    <link id="pagestyle" rel=stylesheet href=fogliodistile.css>
+    <script>
+      "use strict";
+      function chageBackground(colore){
+        if (colore=='rosso') {
+          document.body.style.backgroundColor="red";
+        } else if(colore=='verde'){
+          document.body.style.backgroundColor="green"
+        }else if(colore=='giallo'){
+          document.body.style.backgroundColor="yellow"
+        }else if(colore=='bianco'){
+          document.body.style.backgroundColor="white"
+        }else {
+          //set default.css
+          document.getElementById('pagestyle').setAttribute('href', 'fogliodistile.css');
+        }
+      }
+    </script>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore Lorenzo Costa</p>
+      <p>Scegli un colore:</p>
+      <input type="radio" name="scelta" value="rosso" onclick="chageBackground('rosso')">
+      <label for="rosso">Rosso</label>
+      <input type="radio" name="scelta" value="verde" onclick="chageBackground('verde')">
+      <label for="verde">Verde</label>
+      <input type="radio" name="scelta" value="giallo" onclick="chageBackground('giallo')">
+      <label for="giallo">Giallo</label>
+      <input type="radio" name="scelta" value="bianco" onclick="chageBackground('bianco')">
+      <label for="bianco">Bianco</label>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="it">
+  <head>
+    <title>JS 7_6</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa">
+    <link id="pagestyle" rel=stylesheet href=fogliodistile.css>
+    <script>
+      "use strict";
+      function changeBackground(colore){
+        var color=document.getElementById(colore).value
+        document.body.style.backgroundColor=color;
+      }
+      function isColor(colore){
+        //controlla se un colore passato come stringa è valido o meno
+        var s = new Option().style;
+        s.color = colore;
+        return s.color == colore;
+        //rubata da internet ma bella idea
+      }
+
+    </script>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore Lorenzo Costa</p>
+      <p>Scegli un colore e scrivilo in lingua inglese:</p>
+      <input type="text" id="colore" placeholder="Inserisci un colore qui">
+      <button type="button" id="bottone" onclick="cambiaColore('colore')">Clicca qui quando hai scelto</button>
+      <script>
+        "use strict";
+        function cambiaColore(colore){
+          var strColor=document.getElementById(colore).value
+          console.log("La var. è: "+strColor);
+          if(!isColor(strColor)){
+            window.alert("Il colore inserito non è nel formato corretto, correggere la parola")
+          }else{
+            changeBackground(colore);
+          }
+          return;
+        }
+
+      </script>
+</body>
+</html>
