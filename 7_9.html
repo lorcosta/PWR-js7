@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>JS 7_9</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa" >
+    <link rel=stylesheet href=fogliodistile.css>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore della pagina: Lorenzo Costa</p>
+      <p>Inserire la propria data di nascita nel formato gg/mm/aaaa</p>
+      <input type="data" id="data" placeholder="Inserisci la data di nascita" onchange="giornoNatale('data')">
+      <script>
+        function giornoNatale(data){
+          var regexp=/^\d{1,2}\/\d{1,2}\/\d{4}$/
+          var prendiAnno=/\d{2}$/
+          var d=document.getElementById(data).value
+          if(regexp.test(d)){
+            //cercare il giorno di natale dell'anno
+            var anno=prendiAnno.exec(d)
+            var natale=new Date(anno,11,25)
+            var giornoSettimana=natale.getDay()
+            switch (giornoSettimana) {
+              case 0:
+                document.writeln("<p>Nell'anno in cui sei nato Natale cadeva di domenica<\/p>")
+                return;
+              case 1:
+                document.writeln("<p>Nell'anno in cui sei nato Natale cadeva di luned&igrave<\/p>")
+                return;
+              case 2:
+                document.writeln("<p>Nell'anno in cui sei nato Natale cadeva di marted&igrave<\/p>")
+                return;
+              case 3:
+                document.writeln("<p>Nell'anno in cui sei nato Natale cadeva di mercoled&igrave<\/p>")
+                return;
+              case 4:
+                writeln("<p>Nell'anno in cui sei nato Natale cadeva di gioved&igrave<\/p>")
+                return;
+              case 5:
+                document.writeln("<p>Nell'anno in cui sei nato Natale cadeva di venerd&igrave<\/p>")
+                return;
+              case 6:
+                document.writeln("<p>Nell'anno in cui sei nato Natale cadeva di sabato<\/p>")
+                return;
+              default:
+                document.writeln("<p>Errore nella ricerca del giorno<\/p>")
+                return;
+            }
+            return;
+          }else{
+            window.alert("La data inserita non rispetta il formato richiesto")
+          }
+        }
+        //TODO stampa in una nuova pagina e non semplicemente aggiungendo la riga di testo alla pagina in cui già sono
+      </script>
+  </body>
+</html>
