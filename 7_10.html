@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>JS 7_10</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa" >
+    <link rel=stylesheet href=fogliodistile.css>
+    <script src="funzioni.js"></script>
+    <script>
+    "use strict";
+    function richiamo(num1,num2,num3,num4,num5){
+      var arrayNumeri= new Array(5)
+      arrayNumeri[0]=num1.value
+      arrayNumeri[1]=num2.value
+      arrayNumeri[2]=num3.value
+      arrayNumeri[3]=num4.value
+      arrayNumeri[4]=num5.value
+      console.log(arrayNumeri);
+      var max=maggiore(arrayNumeri)
+      console.log(max);
+      document.getElementById("insertOutput").innerHTML="Il massimo tra i valori inseriti &egrave: "+max
+    }
+    </script>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore della pagina: Lorenzo Costa</p>
+      <input type="text" id="num1" placeholder="Inserisci un numero"><br>
+      <input type="text" id="num2" placeholder="Inserisci un numero"><br>
+      <input type="text" id="num3" placeholder="Inserisci un numero"><br>
+      <input type="text" id="num4" placeholder="Inserisci un numero"><br>
+      <input type="text" id="num5" placeholder="Inserisci un numero"><br>
+      <button type="button" name="bottone" onclick="richiamo(num1,num2,num3,num4,num5)">Trova il massimo</button>
+      <p id="insertOutput"></p>
+  </body>
+</html>
