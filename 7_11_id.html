@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>JS 7_11</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa" >
+    <link rel=stylesheet href=fogliodistile.css>
+    <script>
+      function calcolaCosto(id1,id2,id3){
+        "use strict";
+        var sd=document.getElementById(id1)
+        var usb=document.getElementById(id1)
+        var dvd=document.getElementById(id1)
+        console.log("Valore sd: "+sd.value+" Valore usb: "+usb.value+" Valore dvd: "+dvd.value);
+        var costo= (sd.value*15.5)+(usb.value*18)+(dvd.value*2)
+        console.log(""+costo);
+        document.getElementById("showCosto").innerHTML="Il costo totale &egrave: "+costo
+      }
+      function reset(idForm){
+        //document.getElementById(idForm).reset();
+        //TODO impostare reset della pagina
+      }
+    </script>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore della pagina: Lorenzo Costa</p>
+      <p>Inserisci le quantit&agrave che desideri</p>
+      <!--form name="form"-->
+      <table>
+        <th>Prodotto</th><th>Quantit&agrave</th><th>Prezzo unitario</th>
+        <tr>
+          <td>Memoria SD 8GB</td><td><input type="number" id="sd" name="sd" min="0" max="10" value="0" step="1"></td><td>15.50€</td>
+        </tr>
+        <tr>
+          <td>Chiavetta USB 8GB</td><td><input type="number" id="usb" name="usb" min="0" max="10" value="0" step="1"></td><td>18.00€</td>
+        </tr>
+        <tr>
+          <td>DVD-R</td><td><input type="number" id="dvd" name="dvd" min="0" max="10" value="0" step="1"></td><td>2.00€</td>
+        </tr>
+      </table>
+        <input type="submit" name="submit" onclick="calcolaCosto('sd', 'usb', 'dvd')">
+        <input type="reset" name="reset" onclick="reset()">
+        <p id="showCosto"></p>
+      <!--/form-->
+  </body>
+</html>
