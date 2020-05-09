@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>JS 7_12</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa">
+    <link rel=stylesheet href=fogliodistile.css>
+    <script>
+      "use strict";
+      function coloraRosso(testo){
+        var testo=document.getElementById(testo).value
+        document.getElementById("textToChange").innerHTML=testo
+        document.getElementById("textToChange").style.color="red"
+      }
+      function reset(){
+        document.getElementById("textToChange").innerHTML="Nessun testo inserito"
+        document.getElementById("textToChange").style.color="black"
+        document.getElementById("testo").value=""
+
+      }
+    </script>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore della pagina: Lorenzo Costa</p>
+      <p>Inserisci le quantit&agrave che desideri</p>
+      <table>
+        <th></th><th>Testo inserito</th>
+        <tr>
+        </tr>
+        <tr>
+          <td><input type="text" name="testo" id="testo" placeholder="Inserisci qui il tuo testo" onfocus="this.value=''"></td>
+          <td id="textToChange">Nessun testo inserito</td>
+        </tr>
+        <tr>
+          <td><input type="submit" name="submit" onclick="coloraRosso('testo')"></td><td>
+          <input type="reset" name="reset" onclick="reset()"></td>
+        </tr>
+      </table>
+  </body>
+</html>
