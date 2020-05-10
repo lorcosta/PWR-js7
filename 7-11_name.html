@@ -6,18 +6,15 @@
     <meta name="author" content="Lorenzo Costa" >
     <link rel=stylesheet href=fogliodistile.css>
     <script>
-      function calcolaCosto(x){
-        "use strict";
-        var sd=x.sd.value
-        var usb=x.usb.value
-        var dvd=x.dvd.value
+      "use strict";
+      function calcolaCosto(sd,usb,dvd){
+        var sd=Number(sd)
+        var usb=Number(usb)
+        var dvd=Number(dvd)
         console.log("Valore sd: "+sd+" Valore usb: "+usb+" Valore dvd: "+dvd);
         var costo= (sd*15.5)+(usb*18)+(dvd*2)
         console.log(""+costo);
         document.getElementById("showCosto").innerHTML="Il costo totale &egrave: "+costo
-      }
-      function reset(idForm){
-        document.getElementById(idForm).reset();
       }
     </script>
   </head>
@@ -25,7 +22,7 @@
       <h1>Pagina realizzata con JavaScript</h1>
       <p>Autore della pagina: Lorenzo Costa</p>
       <p>Inserisci le quantit&agrave che desideri</p>
-      <form name="form" onsubmit="calcolaCosto(form)" onreset="reset(form)">
+      <form name="f" action="#">
       <table>
         <th>Prodotto</th><th>Quantit&agrave</th><th>Prezzo unitario</th>
         <tr>
@@ -38,8 +35,8 @@
           <td>DVD-R</td><td><input type="number" id="dvd" name="dvd" min="0" max="10" value="0" step="1"></td><td>2.00€</td>
         </tr>
       </table>
-        <input type="submit" name="submit" >
-        <input type="reset" name="reset">
+        <input type="submit" name="submit" onclick="calcolaCosto(sd.value,usb.value,dvd.value)">
+        <input type="reset" name="reset" value="Azzera">
         <p id="showCosto"></p>
       </form>
   </body>
