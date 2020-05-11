@@ -9,8 +9,8 @@
       function calcolaCosto(id1,id2,id3){
         "use strict";
         var sd=document.getElementById(id1)
-        var usb=document.getElementById(id1)
-        var dvd=document.getElementById(id1)
+        var usb=document.getElementById(id2)
+        var dvd=document.getElementById(id3)
         console.log("Valore sd: "+sd.value+" Valore usb: "+usb.value+" Valore dvd: "+dvd.value);
         var costo= (sd.value*15.5)+(usb.value*18)+(dvd.value*2)
         console.log(""+costo);
@@ -26,7 +26,7 @@
       <h1>Pagina realizzata con JavaScript</h1>
       <p>Autore della pagina: Lorenzo Costa</p>
       <p>Inserisci le quantit&agrave che desideri</p>
-      <!--form name="form"-->
+      <form name="form">
       <table>
         <th>Prodotto</th><th>Quantit&agrave</th><th>Prezzo unitario</th>
         <tr>
@@ -39,9 +39,9 @@
           <td>DVD-R</td><td><input type="number" id="dvd" name="dvd" min="0" max="10" value="0" step="1"></td><td>2.00€</td>
         </tr>
       </table>
-        <input type="submit" name="submit" onclick="calcolaCosto('sd', 'usb', 'dvd')">
-        <input type="reset" name="reset" onclick="reset()">
+        <input type="button" name="submit" onclick="calcolaCosto('sd', 'usb', 'dvd')" value="Calcola costo">
+        <input type="button" name="reset" onclick="reset()" value="Azzera">
         <p id="showCosto"></p>
-      <!--/form-->
+      </form>
   </body>
 </html>

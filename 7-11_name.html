@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
   <head>
-    <title>JS 7_11</title>
+    <title>JS 7-11</title>
     <meta charset="utf-8">
     <meta name="author" content="Lorenzo Costa" >
     <link rel=stylesheet href=fogliodistile.css>
@@ -35,8 +35,8 @@
           <td>DVD-R</td><td><input type="number" id="dvd" name="dvd" min="0" max="10" value="0" step="1"></td><td>2.00€</td>
         </tr>
       </table>
-        <input type="submit" name="submit" onclick="calcolaCosto(sd.value,usb.value,dvd.value)">
-        <input type="reset" name="reset" value="Azzera">
+        <input type="button" name="submit" onclick="calcolaCosto(sd.value,usb.value,dvd.value)" value="Calcola costo">
+        <input type="button" name="reset" value="Azzera">
         <p id="showCosto"></p>
       </form>
   </body>
