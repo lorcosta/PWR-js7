@@ -8,7 +8,7 @@
     <script>
       function giornoNatale(data){
         var regexp=/^\d{1,2}\/\d{1,2}\/\d{4}$/
-        var prendiAnno=/\d{2}$/
+        var prendiAnno=/\d{4}$/
         var d=document.getElementById(data).value
         if(regexp.test(d)){
           //cercare il giorno di natale dell'anno

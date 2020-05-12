@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="it">
+  <head>
+    <title>JS 7_13</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa">
+    <link id="pagestyle" rel=stylesheet href=fogliodistile.css>
+    <script>
+      "use strict";
+      function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+      }
+      function calcola(operazione,x,y) {
+        var output=document.getElementById("showRisultato")
+        if(isNaN(x.value) || !isNumeric(x.value) ){
+          output.innerHTML="Il primo numero inserito non &egrave un numero valido"
+          return
+        }
+        if(isNaN(y.value) || !isNumeric(y.value)){
+          output.innerHTML="Il secondo numero inserito non &egrave un numero valido"
+          return
+        }
+        var x=Number(x.value)
+        var y=Number(y.value)
+        switch (operazione) {
+          case "+":
+            output.innerHTML="Il risultato di "+x+"+"+y+" &egrave <input type='text' id='risultato' disabled value="+(x+y).toFixed(2)+">"
+            break;
+          case "-":
+            output.innerHTML="Il risultato di "+x+"-"+y+" &egrave <input type='text' id='risultato' disabled value="+(x-y).toFixed(2)+">"
+            break;
+          case "*":
+            output.innerHTML="Il risultato di "+x+"*"+y+" &egrave <input type='text' id='risultato' disabled value="+(x*y).toFixed(2)+">"
+            break;
+          case "/":
+            output.innerHTML="Il risultato di "+x+"/"+y+" &egrave <input type='text' id='risultato' disabled value="+(x/y).toFixed(2)+">"
+            break;
+          default:
+            output.innerHTML="Qualcosa non va"
+        }
+      }
+    </script>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore Lorenzo Costa</p>
+      <p>Inserisci due numeri qualsiasi</p>
+      <form name="form">
+        <input type="number" id="num1" placeholder="Inserisci un numero" value="NaN">
+        <input type="number" id="num2" placeholder="Inserisci un altro numero" value="NaN">
+        <input type="radio" name="scelta" value="+">
+        <label for="rosso">Sommare</label>
+        <input type="radio" name="scelta" value="-">
+        <label for="verde">Sottrarre</label>
+        <input type="radio" name="scelta" value="*">
+        <label for="giallo">Moltiplicare</label>
+        <input type="radio" name="scelta" value="/">
+        <label for="bianco">Dividere</label>
+        <input type="button" name="submit" onclick="calcola(scelta.value,num1,num2)" value="Calcola">
+        <input type="button" name="reset" onclick="reset()" value="Azzera">
+      </form>
+      <p id="showRisultato"></p>
+  </body>
+</html>
