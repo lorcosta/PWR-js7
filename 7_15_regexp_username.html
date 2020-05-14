@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>JS 7_15</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa">
+    <link id="pagestyle" rel=stylesheet href=fogliodistile.css>
+    <script>
+      "use strict";
+      function checkUsername(username){
+        var username=document.getElementById(username).value
+        var minuscolo=/[a-z]/
+        var maiuscolo=/[A-Z]/
+        var punto=/\./
+        var virgola=/\./
+        var regexp=/[a-zA-Z\.\,]/g
+        if(!username.match(regexp) && username.length>=5 && minuscolo.test(username) && maiuscolo.test(username)){
+          window.alert("Username accettato")
+        }else if(!username.match(minuscolo)){
+          window.alert("Manca almeno un carattere minuscolo")
+        }else if(!username.match(maiuscolo)){
+          window.alert("Manca almeno un carattere maiuscolo")
+        }else if(!username.match(punto)){
+          window.alert("Manca il punto")
+        }else if(!username.match(virgola)){
+          window.alert("Manca la virgola")
+        }else if(username.length<5){
+          window.alert("I caratteri sono meno di 5")
+        }
+      }
+    </script>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore Lorenzo Costa</p>
+      <p>Inserisci un username di almeno 5 caratteri alfabetici e un punto o una virgola e un caratteri minuscolo e uno maiuscolo</p>
+      <input type="text" id="username" placeholder="Inserisci il tuo username" onchange="checkUsername('username')">
+  </body>
+</html>

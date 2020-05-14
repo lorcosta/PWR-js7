@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>JS 7_16</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa">
+    <link id="pagestyle" rel=stylesheet href=fogliodistile.css>
+    <script>
+      "use strict";
+      function checkTemp(temperatura){
+        var temp=document.getElementById(temperatura).value
+        var regexp=/^(\+|-)+\d{1,3}\.\d{1,}$/
+        if(regexp.test(temp)){
+          window.alert("Temperatura OK")
+        }else{
+          window.alert("Temperatura NON OK")
+        }
+      }
+    </script>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore Lorenzo Costa</p>
+      <p>Inserisci un valore di temperatura positivo o negativo con max. 3 cifre per la parte intera e una per la parte decimale</p>
+      <input type="text" id="temperatura" placeholder="Inserisci la temperatura" onchange="checkTemp('temperatura')">
+  </body>
+</html>

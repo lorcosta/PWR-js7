@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="it">
+  <head>
+    <title>JS 7_17</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa">
+    <link id="pagestyle" rel=stylesheet href=fogliodistile.css>
+    <script>
+      "use strict";
+      function verifica(nome,eta,telefono){
+        var nome=document.getElementById(nome).value
+        var eta=document.getElementById(eta).value
+        var telefono=document.getElementById(telefono).value
+        var corretto=true
+        //controllo il nome
+        var nomeReg=/^[A-Z]{1,}[a-z]{1,9}$/
+        if(!nomeReg.test(nome)){
+          window.alert("Nome non corretto, inserire un nome la cui prima lettera sia maiuscola e non abbia più di 10 lettere")
+          corretto=false
+        }
+        //controllo età
+        var etaReg=/^[1]?\d{1,2}$/
+        if(!etaReg.test(eta)){
+            window.alert("Età non corretta, inserire un valore compreso tra 0 e 199")
+            corretto=false
+        }
+        //controllo telefono
+        var telReg=/^[0]\d{1,2}\-\d{3}\-?\d{3,4}$/
+        if(!telReg.test(telefono)){
+          window.alert("Numero di telefono non corretto: la prima cifra deve essere zero e seguita da uno o due cifre, poi un numero di 6 o 7 cifre con eventualmente un - dopo le prime tre")
+          corretto=false
+        }
+        if(corretto){
+          window.alert("DATI CORRETTI")
+        }
+      }
+    </script>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore Lorenzo Costa</p>
+      <p>Inserisci i campi richiesti</p>
+      <form name="form">
+        <input type="name" id="nome" placeholder="Inserisci un nome">
+        <input type="number" id="eta" placeholder="Inserisci un'età'" value="NaN" min="0" max="199">
+        <input type="tel" id="telefono" placeholder="Inserisci un numero di telefono">
+        <input type="button" name="submit" onclick="verifica('nome','eta','telefono')" value="Verifica">
+      </form>
+  </body>
+</html>

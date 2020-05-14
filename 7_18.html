@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title>JS 7_18</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Lorenzo Costa" >
+    <link rel=stylesheet href=fogliodistile.css>
+    <script>
+      function checkData(data){
+        var regexp=/^\d{1,2}\-\d{1,2}\-\d{4}$/
+        var trattino=/\-/
+        var giorno=/^[0-3]?[0-9]{1}$/
+        var mese=/^[0-1]?[0-9]{1}$/
+        var d=document.getElementById(data).value
+        console.log(d);
+        if(!regexp.test(d)){
+          window.alert("Formato non corretto")
+        }
+        d=d.split(trattino)
+        console.log("Giorno: "+d[0]+"Mese: "+d[1]+"Anno: "+d[2]);
+        if(d[1]==2 && d[0]>28){
+          window.alert("Hai inserito come mese febbraio ma il giorno è sbagliato")
+        }else if(d[0]>30 && (d[1]==11 || d[1]==4 || d[1]==6 || d[1]==9 || d[1]==04 || d[1]==06 || d[1]==09)){
+          window.alert("Il mese scelto ha al massimo 30 giorni")
+        }else if(d[0]>31){
+          window.alert("Non esistono mesi con più di 31 giorni")
+        }else if(d[0]<1){
+          window.alert("Serio?Un giorno del mese minore di 1???")
+        }
+      }
+    </script>
+  </head>
+  <body>
+      <h1>Pagina realizzata con JavaScript</h1>
+      <p>Autore della pagina: Lorenzo Costa</p>
+      <p>Inserire una data nel formato DD-MM-YYYY</p>
+      <input type="text" id="data" placeholder="Inserisci la data di nascita" onchange="checkData('data')">
+      <p id="insertOutput"></p>
+  </body>
+</html>
